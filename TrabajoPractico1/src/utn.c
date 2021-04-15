@@ -9,57 +9,76 @@
 #include <stdlib.h>
 #include "utn.h"
 
-float suma(int num1, int num2)
+int suma(int num1, int num2, float *resultado)
 {
-    float resultado;
+	int todoOk=1;
 
-    resultado = (float) num1 + num2;
+    *resultado = (float) num1 + num2;
 
-    return resultado;
+    return todoOk;
 }
 
-float resta(int num1, int num2)
+int resta(int num1, int num2, float *resultado)
 {
-    float resultado;
+    int todoOk = 1;
 
-    resultado = (float) num1 - num2;
+    *resultado = (float) num1 - num2;
 
-    return resultado;
+    return todoOk;
 }
 
-float multiplicacion(int num1, int num2)
+int multiplicacion(int num1, int num2, float *resultado)
 {
-    float resultado;
+    int todoOk = 1;
 
-    resultado = (float) num1 * num2;
+    *resultado = (float) num1 * num2;
 
-    return resultado;
+    return todoOk;
 }
 
-float division(int num1, int num2)
+int division(int num1, int num2, float *resultado)
 {
-    float resultado;
-
-    resultado = (float) num1 / num2;
-
-    return resultado;
-}
-
-void mostrarResultados (float resultado)
-{
-    printf("El resultado es: %.2f \n", resultado);
-
-}
-
-int factorial(int num)
-{
-    int fact = 1;
-
-    for(int i =1; i<=num; i++)
+    int todoOk = 1;
+    if(num2 == 0)
     {
-        fact = fact * i;
+    	todoOk = 0;
+    }else
+    {
+
+    	*resultado = (float) num1 / num2;
     }
-    return fact;
+
+    return todoOk;
+}
+
+void mostrarResultados (float resultado, int todoOk)
+{
+	if(todoOk == 0)
+	{
+		printf("No se pudo realizar la operacion, hay un numero invalido.\n");
+	}else
+	{
+		printf("El resultado es: %.2f \n", resultado);
+	}
+
+}
+
+int factorial(int num, float *resultado)
+{
+    int todoOk = 1;
+    int fact = 1;
+    if(num<0)
+    {
+    	todoOk = 0;
+    }else
+    {
+    	for(int i =1; i<=num; i++)
+    	{
+    		fact = fact * i;
+    	}
+    	*resultado = fact;
+    }
+    return todoOk;
 }
 
 
