@@ -1,0 +1,24 @@
+/*
+ * empleados.h
+ *
+ *  Created on: 12 may. 2021
+ *      Author: juli
+ */
+
+#ifndef EMPLEADOS_H_
+#define EMPLEADOS_H_
+
+struct
+{
+    int id;
+    char name[51];
+    char lastName[51];
+    float salary;
+    int sector;
+    int isEmpty;
+
+}typedef Employee;
+
+
+
+#endif /* EMPLEADOS_H_ */
