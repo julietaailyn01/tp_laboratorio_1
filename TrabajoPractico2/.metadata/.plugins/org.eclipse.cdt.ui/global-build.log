@@ -1,5 +1,0 @@
-20:55:25 **** Incremental Build of configuration Debug for project TP2 ****
-Info: Internal Builder is used for build
-gcc -o TP2.exe "src\\TP2.o" "src\\empleados.o" 
-c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file TP2.exe: Permission denied
-collect2.exe: error: ld returned 1 exit status
